@@ -32,7 +32,10 @@ This code finetunes BGE reranker using Google Colab GPU.
 | **Recall@10**       | 0.1379    | 0.0849        | 0.1145              | 0.1128           |
 | **Recall@100**      | 0.3559    | 0.3559        | 0.3559              | 0.3559           |
 
-
+## Discussion
+- For the specific dataset, finetuned reranking model outperforms BGE reranking model
+- Merged model (finetuned model + original BGE reranking model) is not as good as finetuned model, still outperforms original model. It is expected: finetuning model on the dataset improves model's performace on the same dataset at the cost of generalizability, and merged model regains some generalizability at the cost of certain performance on the specific dataset.
+- It is interesting that retrieval + reranking results are not as good as retrieval only.     
 ## TODO:
 - Retrieval without reranking performs better than retrieval + reranking. Need to investigate.
 - Evaluation using RAGAS 
